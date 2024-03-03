@@ -1,0 +1,8 @@
+{
+    "manifest_version": 3,
+    "name": "On-Task Manager",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup.html"
+    }
+  }
