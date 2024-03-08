@@ -1,16 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face{
     font-family: "Lilita One";
     src: url("./assets/LilitaOne.ttf");
 }
 
-h1{
+* {
     font-family: "Lilita One", sans-serif;
-    color: #704523
 }
 body{
     background-color: #E1B894;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
