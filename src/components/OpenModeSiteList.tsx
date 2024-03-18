@@ -28,13 +28,12 @@ export default function OpenModeSiteList(){
             <button onClick={() => {
                 updateBlockedSites(((document.getElementById("blockedInput") as HTMLInputElement).value).replace("https://", "").replace("http://", "").replace("www.", ""))
             }}>Add</button>
-            <button onClick={() => {
-                console.log(blockedSites)
-            }}>TEST</button>
 
             {
                 blockedSites.length === 0 ? (
-                    <p>No sites</p>
+                    <div className="my-1 bg-pastel-white rounded-lg ps-2 flex flex-row">
+                        <p className="text-black">No sites</p>
+                    </div>
                 ) : (
                     <ul>{blockedSites.map(site => <Site site={site} functionOnClick={(siteToDelete) => {
                         let newList = blockedSites.filter(item => item !== siteToDelete)
