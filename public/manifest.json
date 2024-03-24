@@ -15,6 +15,12 @@
             "js": ["content_script.js"]
         }
     ],
+    "web_accessible_resources": [
+        {
+            "resources": ["LilitaOne.ttf"],
+            "matches": ["<all_urls>"]
+        }
+    ],
     "permissions": [
         "storage"
     ]

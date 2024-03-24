@@ -1,13 +1,14 @@
 chrome.storage.sync.get("blocked_sites").then(sites => {
     if(sites["blocked_sites"].includes(location.href.replace("https://", "").replace("http://", "").replace("www.", "").split("/")[0])){
-        let link = document.createElement("link")
-        link.rel = "stylesheet"
-        link.href = "https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
-
-        document.head.appendChild(link)
-
-        let blocker = document.createElement("div")
-
+        let style: HTMLStyleElement = document.createElement("style")
+        style.textContent = `
+            @font-face {
+                font-family: "Lilita One";
+                src: url("${chrome.runtime.getURL("LilitaOne.ttf")}");
+            }
+        ` 
+        document.head.appendChild(style)
+        let blocker: HTMLDivElement = document.createElement("div")
         blocker.setAttribute("style", `
             position: fixed;
             top: 0;
@@ -19,7 +20,7 @@ chrome.storage.sync.get("blocked_sites").then(sites => {
             z-index: 9999
         `)
         document.body.style.overflow = "hidden"
-        let blockerMessageBox = document.createElement("div")
+        let blockerMessageBox: HTMLDivElement = document.createElement("div")
         blockerMessageBox.setAttribute("style", `
             position: absolute;
             top: 50%;
@@ -32,7 +33,7 @@ chrome.storage.sync.get("blocked_sites").then(sites => {
             justify-content: center;
         `)
         document.body.appendChild(blocker)
-        let blockerMessageOne = document.createElement("h1")
+        let blockerMessageOne: HTMLHeadingElement = document.createElement("h1")
         blockerMessageOne.textContent = "Sorry, this website is blocked right now!"
         blockerMessageOne.setAttribute("style", `
             text-align: center;
@@ -41,7 +42,7 @@ chrome.storage.sync.get("blocked_sites").then(sites => {
             font-size: 24px;
             padding: 24px;
         `)
-        let blockerMessageTwo = document.createElement("h1")
+        let blockerMessageTwo: HTMLHeadingElement = document.createElement("h1")
         blockerMessageTwo.textContent = "If you would like to access this website, you can change the allowed websites and/or time limit in the extension settings."
         blockerMessageTwo.setAttribute("style", `
             text-align: center;

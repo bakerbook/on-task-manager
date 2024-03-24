@@ -26,7 +26,7 @@ export default function OpenModeSiteList(){
 
             <input id="blockedInput"/>
             <button onClick={() => {
-                updateBlockedSites(((document.getElementById("blockedInput") as HTMLInputElement).value).replace("https://", "").replace("http://", "").replace("www.", ""))
+                updateBlockedSites(((document.getElementById("blockedInput") as HTMLInputElement).value).replace("https://", "").replace("http://", "").replace("www.", "").split("/")[0])
             }}>Add</button>
 
             {
