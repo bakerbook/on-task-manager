@@ -12,11 +12,17 @@ body{
     height: 100%;
 }
 
-::-webkit-scrollbar{
-    display: none;
-}
 html, body{
     scrollbar-width: none;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #875C36;
+    border-radius: 3px;
 }
 
 @tailwind base;

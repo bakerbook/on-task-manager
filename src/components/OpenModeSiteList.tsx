@@ -20,7 +20,7 @@ export default function OpenModeSiteList(){
     })
 
     return(
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center overflow-x-hidden">
 
             <h1 className="underline">Blocked websites</h1>
 
@@ -35,7 +35,7 @@ export default function OpenModeSiteList(){
                         <p className="text-black">No sites</p>
                     </div>
                 ) : (
-                    <ul>{blockedSites.map(site => <Site site={site} functionOnClick={(siteToDelete) => {
+                    <ul className="max-h-40 border-2 border-light-brown p-top-2 p-bottom-2 p-left-2 rounded-md overflow-x-hidden overflow-y-scroll w-96">{blockedSites.map(site => <Site site={site} functionOnClick={(siteToDelete) => {
                         let newList = blockedSites.filter(item => item !== siteToDelete)
                         chrome.storage.sync.set({ "blocked_sites": newList }).then(() => {
                             setBlockedSites(newList)
