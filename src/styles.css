@@ -7,9 +7,14 @@
     font-family: "Lilita One", sans-serif;
 }
 
+html{
+    height: 600px;
+    width: 676px;
+}
+
 body{
     background-color: #E1B894;
-    height: 100%;
+    overflow: hidden;
 }
 
 html, body{
