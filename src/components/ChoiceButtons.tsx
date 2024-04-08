@@ -23,9 +23,8 @@ export default function ChoiceButtons(){
             }
         }}>
             <div className="flex justify-center">
-                <button id="openMode" className="choiceButton bg-pastel-dark-blue hover:text-pastel-white py-4 px-8 text-xl focus:bg-pastel-darkest-blue rounded-l-full">Open Mode</button>
-                <button id ="restrictedMode" className="choiceButton bg-pastel-dark-blue hover:text-pastel-white py-4 px-8 text-xl focus:bg-pastel-darkest-blue">Restricted Mode</button>
-                <button id="unusedMode" className="choiceButton bg-pastel-dark-blue hover:text-pastel-white py-4 px-8 text-xl focus:bg-pastel-darkest-blue rounded-r-full">Button</button>
+                <button id="openMode" className="choiceButton text-center bg-pastel-dark-blue hover:text-pastel-white w-48 py-4 px-8 text-xl focus:bg-pastel-darkest-blue rounded-l-full">Open Mode</button>
+                <button id ="restrictedMode" className="choiceButton text-center bg-pastel-dark-blue hover:text-pastel-white w-48 py-4 px-8 text-xl focus:bg-pastel-darkest-blue rounded-r-full">Restricted Mode</button>
             </div>
             {
                 selected === "openMode" ? (
