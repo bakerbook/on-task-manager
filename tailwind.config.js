@@ -15,7 +15,8 @@ export default {
                 "pastel-dark-blue": "#98BAD5",
                 "pastel-darkest-blue": "#304674",
                 "pastel-blue-green": "#1A3C40",
-                "dark-grey": "#222222"
+                "dark-grey": "#222222",
+                "pastel-red": "#FF6961"
             }
         },
     },

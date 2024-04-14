@@ -20,13 +20,12 @@ export default function OpenModeSiteList(){
     })
 
     return(
-        <div className="flex flex-col justify-center overflow-x-hidden">
+        <div className="flex flex-col justify-center items-center overflow-x-hidden">
 
-            <h1 className="underline">Blocked websites</h1>
-
-            <input id="blockedInput"/>
+            <input id="blockedInput" placeholder="Site" className="mt-2 h-16 w-5/6 text-center text-2xl px-4 py-2 rounded-full bg-gray-100/50 focus:outline-none border-b border-dashed border-gray-300 text-gray-400 placeholder-gray-400"/>
             <button className="h-8 w-16 mx-auto my-1 bg-dark-brown text-pastel-white rounded-md" onClick={() => {
                 if((document.getElementById("blockedInput") as HTMLInputElement).value === "") return;
+                if(!(document.getElementById("blockedInput") as HTMLInputElement).value.includes(".")) { (document.getElementById("blockedInput") as HTMLInputElement).value = ""; return }
                 updateBlockedSites(((document.getElementById("blockedInput") as HTMLInputElement).value).replace("https://", "").replace("http://", "").replace("www.", "").split("/")[0]);
                 (document.getElementById("blockedInput") as HTMLInputElement).value = ""
             }}>Add</button>
@@ -47,6 +46,10 @@ export default function OpenModeSiteList(){
                     }}/>)}</ul>
                 )
             }
+            <button className="h-8 w-16 mx-auto my-1 bg-pastel-red text-black rounded-md" onClick={async () => {
+                await chrome.storage.sync.set({ "blocked_sites": []})
+                setBlockedSites([])
+            }}>Clear sites</button>
         </div>
     )
 }
